@@ -67,6 +67,7 @@ require([], function (){
 				$(".article-inner .fancy-ctn").fancybox();
 			}
 		});
+		
 	}
 	//是否开启动画
 	if(yiliaConfig.animate === true){
@@ -78,6 +79,7 @@ require([], function (){
 				$(".js-avatar").addClass("show");
 			}
 		});
+		
 		if(yiliaConfig.isHome === true){
 			//content
 			function showArticle(){
@@ -97,9 +99,12 @@ require([], function (){
 			});
 			showArticle();
 		}
+		
 	}
+	
 	//是否新窗口打开链接
 	if(yiliaConfig.open_in_new == true){
 		$(".article a[href]").attr("target", "_blank")
 	}
+	
 });
