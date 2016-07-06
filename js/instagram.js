@@ -42,9 +42,9 @@ var Instagram = (function(){
 		if(str.indexOf("outbound-distilleryimage") >= 0 ){
 			var cdnNum = str.match(/outbound-distilleryimage([\s\S]*?)\//)[1];
 			var arr = str.split("/");
-			return "http://distilleryimage"+cdnNum+".ak.instagram.com/"+arr[arr.length-1];
+			return "distilleryimage"+cdnNum+".ak.instagram.com/"+arr[arr.length-1];
 		}else{
-			var url = "http://photos-g.ak.instagram.com/hphotos-ak-xpf1/";
+			var url = "photos-g.ak.instagram.com/hphotos-ak-xpf1/";
 			var arr = str.split("/");
 			return url+arr[arr.length-1];
 		}
@@ -87,6 +87,7 @@ var Instagram = (function(){
 				if(re.meta.code == 200){
 					_collection = _collection.concat(re.data);
 					var next = re.pagination.next_url;
+					var text = next;
 					if(next){
 						getList(next);
 					}else{
@@ -125,10 +126,10 @@ var Instagram = (function(){
 
 			if(!insid){
 				alert("Didn't set your instagram client_id.\nPlease see the info on the console of your brower.");
-				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
+				console.log("Please open 'instagram.com/developer/clients/manage/' to get your client-id.");
 				return;
 			}
-			getList("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
+			getList("api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
 	}
