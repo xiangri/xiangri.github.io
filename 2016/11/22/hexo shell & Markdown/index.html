@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ACM酱油记 | Nocturnes | xiangri</title>
+  <title>hexo shell &amp; Markdown | Nocturnes | xiangri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="退役了。。。">
+  <meta name="description" content="一些常用的Hexo命令 &amp;amp; Markdown_基本语法.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ACM酱油记">
-<meta property="og:url" content="http://yoursite.com/2016/11/22/ACM酱油记/index.html">
+<meta property="og:title" content="hexo shell & Markdown">
+<meta property="og:url" content="http://yoursite.com/2016/11/22/hexo shell & Markdown/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
-<meta property="og:description" content="退役了。。。">
-<meta property="og:updated_time" content="2016-11-22T15:34:25.188Z">
+<meta property="og:description" content="一些常用的Hexo命令 &amp;amp; Markdown_基本语法.">
+<meta property="og:updated_time" content="2016-11-22T16:57:30.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ACM酱油记">
-<meta name="twitter:description" content="退役了。。。">
+<meta name="twitter:title" content="hexo shell & Markdown">
+<meta name="twitter:description" content="一些常用的Hexo命令 &amp;amp; Markdown_基本语法.">
   
     <link rel="alternative" href="/atom.xml" title="Nocturnes | xiangri" type="application/atom+xml">
   
@@ -140,7 +140,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-ACM酱油记" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hexo shell &amp; Markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -150,7 +150,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ACM酱油记
+      hexo shell &amp; Markdown
     </h1>
   
 
@@ -158,20 +158,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>退役了。。。<br><a id="more"></a></p>
-<p>在集训队划了这么久水，名义上搞了两年，但其实真正AC过的题很少，大多都是看完题想出思路了然后一看正解也是这样就懒得去写代码了，这也导致了到了真正比赛的时候总是理（zui）论（pao）AC，思路正解的题总是各种原因wa，最终CCPC杭州和ICPC香港都坑了队友打了两块铁。我这么懒其实不适合ACM这个比赛，没拿到区域赛奖我觉得反而是件好事，让我明白了很多道理，以后的生活更有目标和动力了吧。<br>以前一直认为“真正努力过，才明白天赋有多重要”，道理没错，然而事实上绝大多数人努力的程度之低压根轮不到谈什么天赋。仔细想想自己这两年，别说什么天赋，连努力都谈不上，真是浪费了两年在各种逃课打游戏、无效社交等等上。先定个小目标，做自己真正喜欢做的事，然后努力到拼天赋的程度，苟，岂。</p>
+        <p>一些常用的<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>命令 &amp; Markdown_基本语法.</p>
+<a id="more"></a>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Delete-a-post"><a href="#Delete-a-post" class="headerlink" title="Delete a post"></a>Delete a post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ 删除/<span class="built_in">source</span>/_posts/xxx.md</div><div class="line">$ 删掉/hexo/db.json文件</div><div class="line">$ hexo clean</div><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<h3 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo server <span class="comment">#Hexo 会监视文件变动并自动更新，您无须重启服务器。</span></div><div class="line">$ hexo server <span class="_">-s</span> <span class="comment">#静态模式</span></div><div class="line">$ hexo server -p 5000 <span class="comment">#更改端口</span></div><div class="line">$ hexo server -i 192.168.1.1 <span class="comment">#自定义 IP</span></div><div class="line">$ hexo clean <span class="comment">#清除缓存 网页正常情况下可以忽略此条命令</span></div><div class="line">$ hexo generate <span class="comment">#生成静态网页</span></div><div class="line">$ hexo deploy <span class="comment">#开始部署</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a> <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ERROR Deployer not found: git</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><blockquote>
+<p><a href="http://www.jianshu.com/p/1e402922ee32/" target="_blank" rel="external">Markdown_基本语法</a></p>
+</blockquote>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/11/22/ACM酱油记/" class="archive-article-date">
-  	<time datetime="2016-11-22T14:22:22.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-22</time>
+      <a href="/2016/11/22/hexo shell & Markdown/" class="archive-article-date">
+  	<time datetime="2016-11-22T09:22:05.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-22</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 	</div>
 
       
@@ -184,20 +194,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/11/23/text/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/22/ACM酱油记./" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          text
+          ACM酱油记.
         
       </div>
     </a>
   
-  
-    <a href="/2016/11/22/hexo & Markdown/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo &amp; Markdown</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -229,7 +234,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="ACM酱油记" data-title="ACM酱油记" data-url="http://yoursite.com/2016/11/22/ACM酱油记/"></div>
+	<div class="ds-thread" data-thread-key="hexo shell &amp; Markdown" data-title="hexo shell &amp; Markdown" data-url="http://yoursite.com/2016/11/22/hexo shell &amp; Markdown/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
