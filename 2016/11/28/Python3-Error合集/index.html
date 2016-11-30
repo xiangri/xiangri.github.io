@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/28/Python3-Error合集/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
 <meta property="og:description" content="一些遇到过的python error解决方法。">
-<meta property="og:updated_time" content="2016-11-28T15:27:49.969Z">
+<meta property="og:updated_time" content="2016-11-28T15:30:16.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3 Error合集">
 <meta name="twitter:description" content="一些遇到过的python error解决方法。">
@@ -165,7 +165,7 @@
 <p>UnicodeEncodeError: ‘gbk’ codec can’t encode character ‘\xbb’ in position 26322: illegal multibyte sequence</p>
 </blockquote>
 <p>检查了下要抓取的网页源码发现网页也是用的<strong>utf-8</strong>，于是查了下发现是print()函数自身有限制(python默认编码的局限)，不能完全打印所有的unicode字符。<br>解决方法一：打印的时候用.decode(‘utf-8’)。<br>解决方法二：改下python的默认编码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">'utf8'</span>) <span class="comment">#改变标准输出的默认编码</span></div></pre></td></tr></table></figure></p>
-<h3 id="urllib-error-HTTPError-HTTP-Error-403-Forbidden"><a href="#urllib-error-HTTPError-HTTP-Error-403-Forbidden" class="headerlink" title="urllib.error.HTTPError: HTTP Error 403: Forbidden"></a>urllib.error.HTTPError: HTTP Error 403: Forbidden</h3><p>用 urllib.request.urlopen 方式打开一个URL,服务器端只会收到一个单纯的对于该页面访问的请求,但是服务器并不知道发送这个请求使用的浏览器,操作系统,硬件平台等信息,而缺失这些信息的请求往往都是非正常的访问,例如爬虫.<br>有些网站为了防止这种非正常的访问,会验证请求信息中的UserAgent(它的信息包括硬件平台、系统软件、应用软件和用户个人偏好),如果UserAgent存在异常或者是不存在,那么这次请求将会被拒绝(如上错误信息所示)<br>所以可以尝试在请求中加入UserAgent的信息<br>解决方法二：改下python的默认编码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#如果不加上下面的这行出现会出现urllib2.HTTPError: HTTP Error 403: Forbidden错误</span></div><div class="line">    <span class="comment">#主要是由于该网站禁止爬虫导致的，可以在请求加上头信息，伪装成浏览器访问User-Agent,具体的信息可以通过火狐的FireBug插件查询</span></div><div class="line">    headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'</span>&#125;</div><div class="line">    req = urllib.request.Request(url=chaper_url, headers=headers)</div><div class="line">    urllib.request.urlopen(req).read()</div></pre></td></tr></table></figure></p>
+<h3 id="urllib-error-HTTPError-HTTP-Error-403-Forbidden"><a href="#urllib-error-HTTPError-HTTP-Error-403-Forbidden" class="headerlink" title="urllib.error.HTTPError: HTTP Error 403: Forbidden"></a>urllib.error.HTTPError: HTTP Error 403: Forbidden</h3><p>用 urllib.request.urlopen 方式打开一个URL,服务器端只会收到一个单纯的对于该页面访问的请求,但是服务器并不知道发送这个请求使用的浏览器,操作系统,硬件平台等信息,而缺失这些信息的请求往往都是非正常的访问,例如爬虫.<br>有些网站为了防止这种非正常的访问,会验证请求信息中的UserAgent(它的信息包括硬件平台、系统软件、应用软件和用户个人偏好),如果UserAgent存在异常或者是不存在,那么这次请求将会被拒绝(如上错误信息所示)<br>所以可以尝试在请求中加入UserAgent的信息<br>解决方法：改下python的默认编码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#如果不加上下面的这行出现会出现urllib2.HTTPError: HTTP Error 403: Forbidden错误</span></div><div class="line">    <span class="comment">#主要是由于该网站禁止爬虫导致的，可以在请求加上头信息，伪装成浏览器访问User-Agent,具体的信息可以通过火狐的FireBug插件查询</span></div><div class="line">    headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'</span>&#125;</div><div class="line">    req = urllib.request.Request(url=chaper_url, headers=headers)</div><div class="line">    urllib.request.urlopen(req).read()</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -189,6 +189,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2016/11/29/爬虫简单入门/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          爬虫简单入门
+        
+      </div>
+    </a>
   
   
     <a href="/2016/11/22/ACM酱油记./" id="article-nav-older" class="article-nav-link-wrap">
@@ -303,7 +312,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/ACM-ICPC/" style="font-size: 10px;">ACM-ICPC</a> <a href="/tags/Error/" style="font-size: 10px;">Error</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo-shell-Markdown/" style="font-size: 10px;">hexo-shell-Markdown</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a>
+    				<a href="/tags/ACM-ICPC/" style="font-size: 10px;">ACM-ICPC</a> <a href="/tags/Error/" style="font-size: 10px;">Error</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo-shell-Markdown/" style="font-size: 10px;">hexo-shell-Markdown</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a>
     			</div>
     	</section>
     

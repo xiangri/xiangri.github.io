@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  <title>爬虫简单入门 | Nocturnes | xiangri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近需要一些热点舆情的数据集，于是学习用爬虫简单的爬点数据…研究了下《Python3WebSpider》">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫简单入门">
+<meta property="og:url" content="http://yoursite.com/2016/11/29/爬虫简单入门/index.html">
+<meta property="og:site_name" content="Nocturnes | xiangri">
+<meta property="og:description" content="最近需要一些热点舆情的数据集，于是学习用爬虫简单的爬点数据…研究了下《Python3WebSpider》">
+<meta property="og:updated_time" content="2016-11-30T14:52:40.494Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="爬虫简单入门">
+<meta name="twitter:description" content="最近需要一些热点舆情的数据集，于是学习用爬虫简单的爬点数据…研究了下《Python3WebSpider》">
+  
+    <link rel="alternative" href="/atom.xml" title="Nocturnes | xiangri" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="https://avatars2.githubusercontent.com/u/19582495?v=3&amp;u=734f813808fc4e2042edb2e6fd5a1d8de20937f2&amp;s=400" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">xiangri</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Like a dog ,like a god.</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/杂记/">杂记</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://xiangri.github.io/" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/5352086890/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiang-ri-13" title="zhihu">zhihu</a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/153617376/" title="douban">douban</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">xiangri</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="https://avatars2.githubusercontent.com/u/19582495?v=3&amp;u=734f813808fc4e2042edb2e6fd5a1d8de20937f2&amp;s=400" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xiangri</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Like a dog ,like a god.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/杂记/">杂记</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://xiangri.github.io/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/5352086890/profile?topnav=1&wvr=6" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiang-ri-13" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/153617376/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-爬虫简单入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      爬虫简单入门
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近需要一些热点舆情的数据集，于是学习用爬虫简单的爬点数据…<br>研究了下《Python3WebSpider》</p>
+<a id="more"></a>
+<h3 id="使用urllib-request发送请求"><a href="#使用urllib-request发送请求" class="headerlink" title="使用urllib.request发送请求"></a>使用urllib.request发送请求</h3><p><em>urllib.request</em> 模块提供了最基本的构造 <em>HTTP</em> 请求的方法，利用它可以模拟<br>浏览器的一个请求发起过程，同时它还带有处理 <em>authenticaton</em> （授权验证）， <em>redirections</em> （重定向)， <em>cookies</em> (浏览器<em>Cookies</em>）以及其它内容。<br><em>urllib.request.urlopen()</em>返回一个<em>HTTPResposne</em> 类型的对象，它主要包含的方法<br>有 <em>read() </em>、 <em>readinto()</em> 、 <em>getheader(name)</em> 、 <em>getheaders()</em> 、<em> fileno<br>()</em> 等函数和<em> msg</em> 、 <em>version</em> 、 <em>status</em> 、 <em>reason</em> 、 <em>debuglevel</em> 、 <em>closed</em> 等属性。<br>e.g.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">response = urllib.request.urlopen(<span class="string">'https://www.baidu.com'</span>)</div><div class="line">print(type(response))</div><div class="line">print(response.read().decode(<span class="string">'utf-8'</span>)) <span class="comment">#read()返回网页内容</span></div><div class="line">print(response.status) <span class="comment">#响应的状态码</span></div><div class="line">print(response.getheaders()) <span class="comment">#响应的头信息</span></div><div class="line">print(response.getheader(<span class="string">'Server'</span>)) <span class="comment">#通过传递一个参数获取了 Server 的类型</span></div></pre></td></tr></table></figure></p>
+<h5 id="urllib-request-urlopen-详解"><a href="#urllib-request-urlopen-详解" class="headerlink" title="urllib.request.urlopen()详解"></a>urllib.request.urlopen()详解</h5><p>简单的调用<em>urlopen(url)</em>,可以完成最基本的简单网页的 <em>GET</em> 请求抓取。<br>复杂点的<em>urlopen()API</em>：</p>
+<blockquote>
+<p>urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</p>
+</blockquote>
+<p><em>data</em>参数是可选的，如果要添加<em>data</em>，它要是字节流编码格式的内容，即<em>bytes</em>类型，通过 <em>bytes()</em> 函数可以进行转化，另外如果你传递了这个<em>data</em>参数，它的请求方法就不再是<em>GET</em>方式请求，而是<em>POST</em>。<br>e.g.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.parse</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">data = bytes(urllib.parse.urlencode(&#123;<span class="string">'word'</span>: <span class="string">'hello'</span>&#125;), encoding=<span class="string">'utf8'</span>)</div><div class="line">response = urllib.request.urlopen(<span class="string">'http://httpbin.org/post'</span>,data = data)</div><div class="line">print(response.read())</div></pre></td></tr></table></figure></p>
+<p><em>timeout</em> 参数可以设置超时时间，单位为秒，意思就是如果请求超出了设置的这<br>个时间还没有得到响应，就会抛出异常，如果不指定，就会使用全局默认时间。它<br>支持 <em>HTTP</em> 、 <em>HTTPS</em> 、 <em>FTP</em> 请求。</p>
+<p>其他参数<br>还有 <em>context</em> 参数，它必须是 <em>ssl.SSLContext</em> 类型，用来指定 <em>SSL</em> 设置。<br><em>cafile</em> 和 <em>capath</em> 两个参数是指定CA证书和它的路径，这个在请求 <em>HTTPS</em> 链<br>接时会有用。<br><em>cadefault</em> 参数现在已经弃用了，默认为 <em>False</em> 。<br>More info: <a href="https://docs.python.org/3/library/urllib.request.html" target="_blank" rel="external">官方文档</a></p>
+<h3 id="urllib-request-Request的使用"><a href="#urllib-request-Request的使用" class="headerlink" title="urllib.request.Request的使用"></a>urllib.request.Request的使用</h3><p><em>Request()API</em>:</p>
+<blockquote>
+<p>class urllib.request.Request(url, data=None, headers={}, origin_<br>req_host=None, unverifiable=False, method=None)</p>
+</blockquote>
+<p><em>url</em>是请求链接，这个是必传参数，其他的都是可选参数。<br><em>data</em> 参数如果要传必须传 <em>bytes</em> （字节流）类型的，如果是一个字典，可以先<br>用 <em>urllib.parse.urlencode()</em> 编码。<br><em>headers</em> 参数是一个字典，你可以在构造 <em>Request</em> 时通过 <em>headers</em> 参数传递，<br>也可以通过调用 <em>Request</em> 对象的 <em>add_header()</em> 方法来添加请求头。请求头最常<br>用的用法就是通过修改 <em>User-Agent</em> 来伪装浏览器，默认的 <em>User-Agent</em> 是 <em>Python-urllib</em> ，你可以通过修改它来伪装浏览器，比如要伪装火狐浏<br>览器，你可以把它设置为 <em>Mozilla/5.0 (X11; U; Linux i686)<br>Gecko/20071127 Firefox/2.0.0.11</em> <em>origin_req_host</em> 指的是请求方的 host 名称或者 <em>IP</em> 地址。<br><em>unverifiable</em> 指的是这个请求是否是无法验证的，默认是 <em>False</em> 。意思就是说<br>用户没有足够权限来选择接收这个请求的结果。例如我们请求一个HTML文档中的<br>图片，但是我们没有自动抓取图像的权限，这时 <em>unverifiable</em> 的值就<br>是 <em>True</em> 。<br><em>method</em> 是一个字符串，它用来指示请求使用的方法，比<br>如 <em>GET</em> ， <em>POST</em> ， <em>PUT</em> 等等。<br>e.g.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request, parse</div><div class="line">url = <span class="string">'http://httpbin.org/post'</span></div><div class="line">headers = &#123;</div><div class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'</span>,</div><div class="line">            <span class="string">'Host'</span>: <span class="string">'httpbin.org'</span></div><div class="line">&#125;</div><div class="line">dict = &#123;</div><div class="line">        <span class="string">'name'</span>: <span class="string">'Germey'</span></div><div class="line">&#125;</div><div class="line">data = bytes(parse.urlencode(dict), encoding=<span class="string">'utf8'</span>)</div><div class="line">req = request.Request(url=url, data=data, headers=headers, metho</div><div class="line">d=<span class="string">'POST'</span>)</div><div class="line">response = request.urlopen(req)</div><div class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</div></pre></td></tr></table></figure></p>
+<h3 id="urllib-request高级特性"><a href="#urllib-request高级特性" class="headerlink" title="urllib.request高级特性"></a>urllib.request高级特性</h3><h4 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a><em>Handler</em></h4><p>简而言之你可以把它理解为各种处理器，有专门处理登录验证的，有处理 <em>Cookies</em> 的，有处理代理设置的，利用它们我们几乎可以做到任何 HTTP 请求中所有的事情。<br>首先介绍下 <em>urllib.request.BaseHandler</em> ，它是所有其他 <em>Handler</em> 的父类，<br>它提供了最基本的 <em>Handler</em> 的方法，例如 <em>default_open()</em> 、 <em>protocol_request()</em> 等。<br>接下来就有各种 <em>Handler</em> 类继承这个 <em>BaseHandler</em> ，列举如下：</p>
+<p><em>HTTPDefaultErrorHandler 用于处理HTTP响应错误，错误都会抛出 HTTPError 类型的异常。
+</em>HTTPRedirectHandler 用于处理重定向。<br><em>HTTPCookieProcessor 用于处理 Cookie 。
+</em>ProxyHandler 用于设置代理，默认代理为空。<br><em>HTTPPasswordMgr 用于管理密码，它维护了用户名密码的表。
+</em>HTTPBasicAuthHandler 用于管理认证，如果一个链接打开时需要认证，那<br>么可以用它来解决认证问题。<br>*另外还有其他的 Handler ，可以参考<a href="https://docs.python.org/3/library/urllib.request.html#urllib.request.BaseHandler" target="_blank" rel="external">官方文档</a>。</p>
+<h4 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line">auth_handler = urllib.request.HTTPBasicAuthHandler()</div><div class="line"><span class="comment">#添加用户名和密码，建立了一个处理认证的处理器。</span></div><div class="line">auth_handler.add_password(realm = <span class="string">'PDQ Application'</span>,</div><div class="line">                          uri =<span class="string">'https://mahler:8092/site-updates.py'</span>,</div><div class="line">                          user=<span class="string">'klem'</span>,</div><div class="line">                          passwd=<span class="string">'kadidd!ehopper'</span>)</div><div class="line">opener = urllib.request.build_opener(auth_handler) <span class="comment">#具备认证功能的Opener</span></div><div class="line">urllib.request.install_opener(opener)</div><div class="line">urllib.request.urlopen(<span class="string">'http://www.example.com/login.html'</span>)</div></pre></td></tr></table></figure>
+<h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="comment">#ProxyHandler参数为字典key是协议类型，比如 http 还是 https等，value是代理链接，可以添加多个代理</span></div><div class="line">proxy_handler = urllib.request.ProxyHandler(&#123;</div><div class="line">        <span class="string">'http'</span>: <span class="string">'http://218.202.111.10:80'</span>, <span class="comment">#示例</span></div><div class="line">        <span class="string">'https'</span>: <span class="string">'https://180.250.163.34:8888'</span></div><div class="line">&#125;)</div><div class="line">opener = urllib.request.build_opener(proxy_handler)</div><div class="line">response = opener.open(<span class="string">'https://www.baidu.com'</span>)</div><div class="line">print(response.read())</div></pre></td></tr></table></figure>
+<h4 id="Cookie设置"><a href="#Cookie设置" class="headerlink" title="Cookie设置"></a>Cookie设置</h4><p>怎样将网站的<em>Cookie</em>获取下来<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> http.cookiejar, urllib.request</div><div class="line">cookie = http.cookiejar.CookieJar() <span class="comment">#CookieJar对象</span></div><div class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</div><div class="line">opener = urllib.request.build_opener(handler)</div><div class="line">response = opener.open(<span class="string">'http://www.baidu.com'</span>)</div><div class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</div><div class="line">    print(item.name+<span class="string">"="</span>+item.value)</div></pre></td></tr></table></figure></p>
+<p>将网站Cookie设置到headers里，可以实现登陆。</p>
+<h3 id="requests的基本使用"><a href="#requests的基本使用" class="headerlink" title="requests的基本使用"></a>requests的基本使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">url = <span class="string">'http://www.baidu.com'</span></div><div class="line">r = requests.get(url) <span class="comment">#GET 请求</span></div><div class="line">print(r.status_code) <span class="comment">#状态码</span></div><div class="line">print(r.text) <span class="comment">#响应体内容</span></div><div class="line">print(r.cookies) <span class="comment">#Cookies</span></div></pre></td></tr></table></figure>
+<h4 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h4><p>HTTP中最常见的请求之一就是 GET 请求，我们首先来详细了解下利用requests来构建GET请求的方法以及相关属性方法操作。首先让我们来构建一个最简单的 GET 请求，<br>请求<em>httpbin.org/get</em>它会判断如果你是GET请求的话，会返回响应的请求信息。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">r = requests.get(<span class="string">'http://httpbin.org/get'</span>)</div><div class="line">print(r.text)</div></pre></td></tr></table></figure></p>
+<p>运行结果如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"args"</span>: &#123;&#125;,</div><div class="line">    <span class="string">"headers"</span>: &#123;</div><div class="line">    <span class="string">"Accept"</span>: <span class="string">"*/*"</span>,</div><div class="line">    <span class="string">"Accept-Encoding"</span>: <span class="string">"gzip, deflate"</span>,</div><div class="line">    <span class="string">"Host"</span>: <span class="string">"httpbin.org"</span>,</div><div class="line">    <span class="string">"User-Agent"</span>: <span class="string">"python-requests/2.10.0"</span></div><div class="line">&#125;,</div><div class="line">    <span class="string">"origin"</span>: <span class="string">"122.4.215.33"</span>,</div><div class="line">    <span class="string">"url"</span>: <span class="string">"http://httpbin.org/get"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可以发现我们成功发起了get请求，请求的链接和头信息都有相应的返回。<br>如果现在我想添加两个参数，名字name是germey，年龄age是22。那么可以利用<em>params</em>参数<br>e.g.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">data = &#123;</div><div class="line">    <span class="string">'name'</span>: <span class="string">'germey'</span>,</div><div class="line">    <span class="string">'age'</span>: <span class="number">22</span></div><div class="line">&#125;</div><div class="line">r = requests.get(<span class="string">"http://httpbin.org/get"</span>, params=data)</div><div class="line">print(r.text)</div></pre></td></tr></table></figure></p>
+<p>运行结果如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"args"</span>: &#123;</div><div class="line">    <span class="string">"age"</span>: <span class="string">"22"</span>,</div><div class="line">    <span class="string">"name"</span>: <span class="string">"germey"</span></div><div class="line">&#125;,</div><div class="line">    <span class="string">"headers"</span>: &#123;</div><div class="line">    <span class="string">"Accept"</span>: <span class="string">"*/*"</span>,</div><div class="line">    <span class="string">"Accept-Encoding"</span>: <span class="string">"gzip, deflate"</span>,</div><div class="line">    <span class="string">"Host"</span>: <span class="string">"httpbin.org"</span>,</div><div class="line">    <span class="string">"User-Agent"</span>: <span class="string">"python-requests/2.10.0"</span></div><div class="line">&#125;,</div><div class="line">    <span class="string">"origin"</span>: <span class="string">"122.4.215.33"</span>,</div><div class="line">    <span class="string">"url"</span>: <span class="string">"http://httpbin.org/get?age=22&amp;name=germey"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>通过返回信息我们可以判断，请求的链接自动被构造成了<em><a href="http://httpbin.org/get?age=22&amp;name=germey" target="_blank" rel="external">http://httpbin.org/get?age=22&amp;name=germey</a></em>.</p>
+<p>另外，网页的返回类型实际上是<em>str</em>类型，但是它很特殊，是<em>Json</em>的格式，所<br>以如果我们想直接把返回结果解析，得到一个字典<em>dict</em>格式的话，可以直接调<br>用<em>json()</em>方法,就可以将返回结果是<em>Json</em>格式的字符串转化为字典<em>dict</em>。但是注意<br>如果返回结果不是<em>Json</em>格式，便会出现解析错误，抛出抛<em>json.decoder.JSONDecodeError</em> 的异常。</p>
+<h4 id="抓取二进制数据"><a href="#抓取二进制数据" class="headerlink" title="抓取二进制数据"></a>抓取二进制数据</h4><p>我们都知道，图片、音频、视频这些文件都是本质上由二进制码组成的，由于有特<br>定的保存格式和对应的解析方式，我们才可以看到这些形形色色的多媒体。所以想<br>要抓取他们，那就需要拿到他们的二进制码。<br>e.g.GitHub的站点图标<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">r = requests.get(<span class="string">"https://github.com/favicon.ico"</span>)</div><div class="line">print(r.text)</div><div class="line">print(r.content)</div></pre></td></tr></table></figure></p>
+<p>运行代码可以发现<em>r.text</em>的代码出现乱码，而<em>r.content</em>的结果前面带有一个<em>b</em>，代表这是<em>bytes</em>类型的数据。由于图片是二进制数据，所以前者在打印时转化为 str 类型，也就是图片直接转化为字符串，理所当然会出现乱码。<br>两个属性有什么区别？前者返回的是字符串类型，如果返回结果是文本文件，那么<br>用这种方式直接获取其内容即可。如果返回结果是图片、音频、视频等文<br>件， requests 会为我们自动解码成 bytes 类型，即获取字节流数据。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">r = requests.get(<span class="string">"https://github.com/favicon.ico"</span>)</div><div class="line"><span class="comment"># open() 函数，第一个参数是文件名称，第二个参数代表以二进制写的形式打开，可以向文件里写入二进制数据，然后保存.</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'favicon.ico'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">f.write(r.content)</div><div class="line">f.close()</div></pre></td></tr></table></figure></p>
+<p>运行结束之后，可以发现在文件夹中出现了名为favicon.ico的图标,同样的，音频、视频文件也可以用这种方法获取。</p>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>requests 还提供了一个内置的状态码查询对象 requests.codes 。<br>比如你可以通过 <em>if r.status_code ==requests.codes.ok</em> 来判断请求是否成功.<br>返回码和相应的查询条件:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Informational.</span></div><div class="line"><span class="number">100</span>: (<span class="string">'continue'</span>,),</div><div class="line"><span class="number">101</span>: (<span class="string">'switching_protocols'</span>,),</div><div class="line"><span class="number">102</span>: (<span class="string">'processing'</span>,),</div><div class="line"><span class="number">103</span>: (<span class="string">'checkpoint'</span>,),</div><div class="line"><span class="number">122</span>: (<span class="string">'uri_too_long'</span>, <span class="string">'request_uri_too_long'</span>),</div><div class="line"><span class="number">200</span>: (<span class="string">'ok'</span>, <span class="string">'okay'</span>, <span class="string">'all_ok'</span>, <span class="string">'all_okay'</span>, <span class="string">'all_good'</span>, <span class="string">'\\o/'</span>, <span class="string">'✓'</span>),</div><div class="line"><span class="number">201</span>: (<span class="string">'created'</span>,),</div><div class="line"><span class="number">202</span>: (<span class="string">'accepted'</span>,),</div><div class="line"><span class="number">203</span>: (<span class="string">'non_authoritative_info'</span>, <span class="string">'non_authoritative_information'</span>),</div><div class="line"><span class="number">204</span>: (<span class="string">'no_content'</span>,),</div><div class="line"><span class="number">205</span>: (<span class="string">'reset_content'</span>, <span class="string">'reset'</span>),</div><div class="line"><span class="number">206</span>: (<span class="string">'partial_content'</span>, <span class="string">'partial'</span>),</div><div class="line"><span class="number">207</span>: (<span class="string">'multi_status'</span>, <span class="string">'multiple_status'</span>, <span class="string">'multi_stati'</span>, <span class="string">'multiple_stati'</span>),</div><div class="line"><span class="number">208</span>: (<span class="string">'already_reported'</span>,),</div><div class="line"><span class="number">226</span>: (<span class="string">'im_used'</span>,),</div><div class="line"><span class="number">300</span>: (<span class="string">'multiple_choices'</span>,),</div><div class="line"><span class="number">301</span>: (<span class="string">'moved_permanently'</span>, <span class="string">'moved'</span>, <span class="string">'\\o-'</span>),</div><div class="line"><span class="number">302</span>: (<span class="string">'found'</span>,),</div><div class="line"><span class="number">303</span>: (<span class="string">'see_other'</span>, <span class="string">'other'</span>),</div><div class="line"><span class="number">304</span>: (<span class="string">'not_modified'</span>,),</div><div class="line"><span class="number">305</span>: (<span class="string">'use_proxy'</span>,),</div><div class="line"><span class="number">306</span>: (<span class="string">'switch_proxy'</span>,),</div><div class="line"><span class="number">307</span>: (<span class="string">'temporary_redirect'</span>, <span class="string">'temporary_moved'</span>, <span class="string">'temporary'</span>),</div><div class="line"><span class="number">308</span>: (<span class="string">'permanent_redirect'</span>,</div><div class="line"><span class="string">'resume_incomplete'</span>, <span class="string">'resume'</span>,), <span class="comment"># These 2 to be removed in 3.0</span></div><div class="line"><span class="comment"># Client Error.</span></div><div class="line"><span class="number">400</span>: (<span class="string">'bad_request'</span>, <span class="string">'bad'</span>),</div><div class="line"><span class="number">401</span>: (<span class="string">'unauthorized'</span>,),</div><div class="line"><span class="number">402</span>: (<span class="string">'payment_required'</span>, <span class="string">'payment'</span>),</div><div class="line"><span class="number">403</span>: (<span class="string">'forbidden'</span>,),</div><div class="line"><span class="number">404</span>: (<span class="string">'not_found'</span>, <span class="string">'-o-'</span>),</div><div class="line"><span class="number">405</span>: (<span class="string">'method_not_allowed'</span>, <span class="string">'not_allowed'</span>),</div><div class="line"><span class="number">406</span>: (<span class="string">'not_acceptable'</span>,),</div><div class="line"><span class="number">407</span>: (<span class="string">'proxy_authentication_required'</span>, <span class="string">'proxy_auth'</span>, <span class="string">'proxy_authentication'</span>),</div><div class="line"><span class="number">408</span>: (<span class="string">'request_timeout'</span>, <span class="string">'timeout'</span>),</div><div class="line"><span class="number">409</span>: (<span class="string">'conflict'</span>,),</div><div class="line"><span class="number">410</span>: (<span class="string">'gone'</span>,),</div><div class="line"><span class="number">411</span>: (<span class="string">'length_required'</span>,),</div><div class="line"><span class="number">412</span>: (<span class="string">'precondition_failed'</span>, <span class="string">'precondition'</span>),</div><div class="line"><span class="number">413</span>: (<span class="string">'request_entity_too_large'</span>,),</div><div class="line"><span class="number">414</span>: (<span class="string">'request_uri_too_large'</span>,),</div><div class="line"><span class="number">415</span>: (<span class="string">'unsupported_media_type'</span>, <span class="string">'unsupported_media'</span>, <span class="string">'media_type'</span>),</div><div class="line"><span class="number">416</span>: (<span class="string">'requested_range_not_satisfiable'</span>, <span class="string">'requested_range'</span>,</div><div class="line"><span class="string">'range_not_satisfiable'</span>),</div><div class="line"><span class="number">417</span>: (<span class="string">'expectation_failed'</span>,),</div><div class="line"><span class="number">418</span>: (<span class="string">'im_a_teapot'</span>, <span class="string">'teapot'</span>, <span class="string">'i_am_a_teapot'</span>),</div><div class="line"><span class="number">421</span>: (<span class="string">'misdirected_request'</span>,),</div><div class="line"><span class="number">422</span>: (<span class="string">'unprocessable_entity'</span>, <span class="string">'unprocessable'</span>),</div><div class="line"><span class="number">423</span>: (<span class="string">'locked'</span>,),</div><div class="line"><span class="number">424</span>: (<span class="string">'failed_dependency'</span>, <span class="string">'dependency'</span>),</div><div class="line"><span class="number">425</span>: (<span class="string">'unordered_collection'</span>, <span class="string">'unordered'</span>),</div><div class="line"><span class="number">426</span>: (<span class="string">'upgrade_required'</span>, <span class="string">'upgrade'</span>),</div><div class="line"><span class="number">428</span>: (<span class="string">'precondition_required'</span>, <span class="string">'precondition'</span>),</div><div class="line"><span class="number">429</span>: (<span class="string">'too_many_requests'</span>, <span class="string">'too_many'</span>),</div><div class="line"><span class="number">431</span>: (<span class="string">'header_fields_too_large'</span>, <span class="string">'fields_too_large'</span>),</div><div class="line"><span class="number">444</span>: (<span class="string">'no_response'</span>, <span class="string">'none'</span>),</div><div class="line"><span class="number">449</span>: (<span class="string">'retry_with'</span>, <span class="string">'retry'</span>),</div><div class="line"><span class="number">450</span>: (<span class="string">'blocked_by_windows_parental_controls'</span>, <span class="string">'parental_controls'</span>),</div><div class="line"><span class="number">451</span>: (<span class="string">'unavailable_for_legal_reasons'</span>, <span class="string">'legal_reasons'</span>),</div><div class="line"><span class="number">499</span>: (<span class="string">'client_closed_request'</span>,),</div><div class="line"><span class="comment"># Server Error.</span></div><div class="line"><span class="number">500</span>: (<span class="string">'internal_server_error'</span>, <span class="string">'server_error'</span>, <span class="string">'/o\\'</span>, <span class="string">'✗'</span>),</div><div class="line"><span class="number">501</span>: (<span class="string">'not_implemented'</span>,),</div><div class="line"><span class="number">502</span>: (<span class="string">'bad_gateway'</span>,),</div><div class="line"><span class="number">503</span>: (<span class="string">'service_unavailable'</span>, <span class="string">'unavailable'</span>),</div><div class="line"><span class="number">504</span>: (<span class="string">'gateway_timeout'</span>,),</div><div class="line"><span class="number">505</span>: (<span class="string">'http_version_not_supported'</span>, <span class="string">'http_version'</span>),</div><div class="line"><span class="number">506</span>: (<span class="string">'variant_also_negotiates'</span>,),</div><div class="line"><span class="number">507</span>: (<span class="string">'insufficient_storage'</span>,),</div><div class="line"><span class="number">509</span>: (<span class="string">'bandwidth_limit_exceeded'</span>, <span class="string">'bandwidth'</span>),</div><div class="line"><span class="number">510</span>: (<span class="string">'not_extended'</span>,),</div><div class="line"><span class="number">511</span>: (<span class="string">'network_authentication_required'</span>, <span class="string">'network_auth'</span>, <span class="string">'network_authentication'</span>),</div></pre></td></tr></table></figure></p>
+<p>未完待续…</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/29/爬虫简单入门/" class="archive-article-date">
+  	<time datetime="2016-11-29T01:32:06.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-29</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/28/Python3-Error合集/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python3 Error合集</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="爬虫简单入门" data-title="爬虫简单入门" data-url="http://yoursite.com/2016/11/29/爬虫简单入门/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 xiangri
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/ACM-ICPC/" style="font-size: 10px;">ACM-ICPC</a> <a href="/tags/Error/" style="font-size: 10px;">Error</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo-shell-Markdown/" style="font-size: 10px;">hexo-shell-Markdown</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">XiangRi.&lt;br&gt;Current Undergraduate,&lt;br&gt;Software Engineering.&lt;br&gt;&lt;br&gt;I love life.&lt;br&gt;I love pretty girls.&lt;br&gt;I love poetry and future.</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
