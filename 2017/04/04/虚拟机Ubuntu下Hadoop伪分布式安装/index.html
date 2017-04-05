@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
 <meta property="og:description" content="VMware虚拟机Ubuntu下安装Hadoop及其配置.">
-<meta property="og:updated_time" content="2017-04-05T12:11:59.317Z">
+<meta property="og:updated_time" content="2017-04-05T13:36:48.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="虚拟机Ubuntu下Hadoop伪分布式安装">
 <meta name="twitter:description" content="VMware虚拟机Ubuntu下安装Hadoop及其配置.">
@@ -176,21 +176,21 @@
         <p>VMware虚拟机Ubuntu下安装Hadoop及其配置.</p>
 <a id="more"></a>
 <p>使用secureCRT连接终端。</p>
-<h2 id="1、安装JDK"><a href="#1、安装JDK" class="headerlink" title="1、安装JDK."></a>1、安装JDK.</h2><h3 id="1-1-上传jdk安装包到服务器"><a href="#1-1-上传jdk安装包到服务器" class="headerlink" title="1.1 上传jdk安装包到服务器"></a>1.1 上传jdk安装包到服务器</h3><p>alt+p 出现sftp窗口，然后输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">put D:\MyProgram\JDK\jdk-8u121-linux-x64.tar.gz</div></pre></td></tr></table></figure></p>
-<h3 id="1-2-解压jdk"><a href="#1-2-解压jdk" class="headerlink" title="1.2 解压jdk"></a>1.2 解压jdk</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#创建文件夹</span></div><div class="line">mkdir app</div><div class="line"><span class="comment">#解压</span></div><div class="line">tar -zxvf jdk-8u121-linux-x64.tar.gz -C app</div></pre></td></tr></table></figure>
-<h3 id="1-3-将java添加到环境变量中"><a href="#1-3-将java添加到环境变量中" class="headerlink" title="1.3 将java添加到环境变量中"></a>1.3 将java添加到环境变量中</h3><p>切换到su然后修改。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/profile</div><div class="line"><span class="comment">#在文件最后添加</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk1.8.0_121</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</div><div class="line">	</div><div class="line"><span class="comment">#刷新配置生效</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
-<h2 id="2、安装Hadoop"><a href="#2、安装Hadoop" class="headerlink" title="2、安装Hadoop."></a>2、安装Hadoop.</h2><h3 id="2-1-上传hadoop安装包"><a href="#2-1-上传hadoop安装包" class="headerlink" title="2.1 上传hadoop安装包"></a>2.1 上传hadoop安装包</h3><p>alt+p 出现sftp窗口，然后输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">put D:\MyProgram\hadoop-2.6.5.tar.gz</div></pre></td></tr></table></figure></p>
-<h3 id="2-2-解压hadoop"><a href="#2-2-解压hadoop" class="headerlink" title="2.2 解压hadoop"></a>2.2 解压hadoop</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#创建文件夹</span></div><div class="line">mkdir app</div><div class="line"><span class="comment">#解压</span></div><div class="line">tar -zxvf hadoop-2.6.5.tar.gz -C app</div></pre></td></tr></table></figure>
+<h2 id="1、安装JDK"><a href="#1、安装JDK" class="headerlink" title="1、安装JDK."></a>1、安装JDK.</h2><h3 id="1-1-上传jdk安装包到服务器"><a href="#1-1-上传jdk安装包到服务器" class="headerlink" title="1.1 上传jdk安装包到服务器"></a>1.1 上传jdk安装包到服务器</h3><p>alt+p 出现sftp窗口，然后输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ put D:\MyProgram\JDK\jdk-8u121-linux-x64.tar.gz</div></pre></td></tr></table></figure></p>
+<h3 id="1-2-解压jdk"><a href="#1-2-解压jdk" class="headerlink" title="1.2 解压jdk"></a>1.2 解压jdk</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#创建文件夹</span></div><div class="line">$ mkdir app</div><div class="line"><span class="comment">#解压</span></div><div class="line">$ tar -zxvf jdk-8u121-linux-x64.tar.gz -C app</div></pre></td></tr></table></figure>
+<h3 id="1-3-将java添加到环境变量中"><a href="#1-3-将java添加到环境变量中" class="headerlink" title="1.3 将java添加到环境变量中"></a>1.3 将java添加到环境变量中</h3><p>切换到su然后修改。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ sudo vi /etc/profile</div><div class="line"><span class="comment">#在文件最后添加</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk1.8.0_121</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</div><div class="line">	</div><div class="line"><span class="comment">#刷新配置生效</span></div><div class="line">$ <span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
+<h2 id="2、安装Hadoop"><a href="#2、安装Hadoop" class="headerlink" title="2、安装Hadoop."></a>2、安装Hadoop.</h2><h3 id="2-1-上传hadoop安装包"><a href="#2-1-上传hadoop安装包" class="headerlink" title="2.1 上传hadoop安装包"></a>2.1 上传hadoop安装包</h3><p>alt+p 出现sftp窗口，然后输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ put D:\MyProgram\hadoop-2.6.5.tar.gz</div></pre></td></tr></table></figure></p>
+<h3 id="2-2-解压hadoop"><a href="#2-2-解压hadoop" class="headerlink" title="2.2 解压hadoop"></a>2.2 解压hadoop</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#创建文件夹</span></div><div class="line">$ mkdir app</div><div class="line"><span class="comment">#解压</span></div><div class="line">$ tar -zxvf hadoop-2.6.5.tar.gz -C app</div></pre></td></tr></table></figure>
 <h3 id="2-3-配置hadoop"><a href="#2-3-配置hadoop" class="headerlink" title="2.3 配置hadoop"></a>2.3 配置hadoop</h3><p>总共修改/hadoop-2.6.5/etc/hadoop/目录下五个文件</p>
-<h4 id="2-3-1-hadoop-env-sh"><a href="#2-3-1-hadoop-env-sh" class="headerlink" title="2.3.1 hadoop-env.sh"></a>2.3.1 hadoop-env.sh</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo vi hadoop-env.sh</div><div class="line"><span class="comment">#将JAVA_HOME写死</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.7.0_65</div></pre></td></tr></table></figure>
-<h4 id="2-3-2-core-site-xml"><a href="#2-3-2-core-site-xml" class="headerlink" title="2.3.2 core-site.xml"></a>2.3.2 core-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">sudo vi core-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;fs.defaultFS&lt;/name&gt;</div><div class="line">	&lt;value&gt;hdfs://<span class="built_in">test</span>:9000&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</div><div class="line">	&lt;value&gt;/home/hadoop/app/hadoop-2.6.5/tmp&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
-<h4 id="2-3-3-hdfs-site-xml"><a href="#2-3-3-hdfs-site-xml" class="headerlink" title="2.3.3 hdfs-site.xml"></a>2.3.3 hdfs-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo vi hdfs-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">	&lt;value&gt;1&lt;/value&gt; <span class="comment">#节点个数</span></div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
-<h4 id="2-3-4-mapred-site-xml"><a href="#2-3-4-mapred-site-xml" class="headerlink" title="2.3.4 mapred-site.xml"></a>2.3.4 mapred-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#原文件为mapred-site.xml.template，需要先转换成xml文件</span></div><div class="line">mv mapred-site.xml.template mapred-site.xml</div><div class="line">sudo vi mapred-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">	&lt;value&gt;yarn&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
-<h4 id="2-3-5-yarn-site-xml"><a href="#2-3-5-yarn-site-xml" class="headerlink" title="2.3.5 yarn-site.xml"></a>2.3.5 yarn-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">sudo vi yarn-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;</div><div class="line">	&lt;value&gt;<span class="built_in">test</span>&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">	&lt;value&gt;mapreduce_shuffle&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
-<h4 id="2-3-6-将hadoop添加到环境变量"><a href="#2-3-6-将hadoop添加到环境变量" class="headerlink" title="2.3.6 将hadoop添加到环境变量"></a>2.3.6 将hadoop添加到环境变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/profile</div><div class="line"></div><div class="line"><span class="comment">#在文件最后添加</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk1.8.0_121</div><div class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/app/hadoop-2.6.5</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/sbin</div><div class="line">	</div><div class="line"><span class="comment">#刷新配置生效</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
-<h3 id="2-4-格式化namenode"><a href="#2-4-格式化namenode" class="headerlink" title="2.4 格式化namenode"></a>2.4 格式化namenode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hdfs namenode -format (或者hadoop namenode -format)</div></pre></td></tr></table></figure>
-<h3 id="2-5-启动hadoop"><a href="#2-5-启动hadoop" class="headerlink" title="2.5 启动hadoop"></a>2.5 启动hadoop</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">start-dfs.sh</div><div class="line">start-yarn.sh</div></pre></td></tr></table></figure>
-<h3 id="2-6-验证是否启动成功"><a href="#2-6-验证是否启动成功" class="headerlink" title="2.6 验证是否启动成功"></a>2.6 验证是否启动成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:/home/hadoop/app/hadoop-2.6.5/sbin<span class="comment"># jps</span></div><div class="line"></div><div class="line"><span class="comment">#下面六个全部有则成功</span></div><div class="line">27408 NameNode</div><div class="line">28218 Jps</div><div class="line">27643 SecondaryNameNode</div><div class="line">28066 NodeManager</div><div class="line">27803 ResourceManager</div><div class="line">27512 DataNode</div><div class="line"></div><div class="line"><span class="comment">#web管理端</span></div><div class="line">http://ubuntu:50070 （HDFS管理界面）</div><div class="line">http://ubuntu:8088 （MR管理界面）</div></pre></td></tr></table></figure>
+<h4 id="2-3-1-hadoop-env-sh"><a href="#2-3-1-hadoop-env-sh" class="headerlink" title="2.3.1 hadoop-env.sh"></a>2.3.1 hadoop-env.sh</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo vi hadoop-env.sh</div><div class="line"><span class="comment">#将JAVA_HOME写死</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.7.0_65</div></pre></td></tr></table></figure>
+<h4 id="2-3-2-core-site-xml"><a href="#2-3-2-core-site-xml" class="headerlink" title="2.3.2 core-site.xml"></a>2.3.2 core-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ sudo vi core-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;fs.defaultFS&lt;/name&gt;</div><div class="line">	&lt;value&gt;hdfs://<span class="built_in">test</span>:9000&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</div><div class="line">	&lt;value&gt;/home/hadoop/app/hadoop-2.6.5/tmp&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-3-3-hdfs-site-xml"><a href="#2-3-3-hdfs-site-xml" class="headerlink" title="2.3.3 hdfs-site.xml"></a>2.3.3 hdfs-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ sudo vi hdfs-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">	&lt;value&gt;1&lt;/value&gt; <span class="comment">#节点个数</span></div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-3-4-mapred-site-xml"><a href="#2-3-4-mapred-site-xml" class="headerlink" title="2.3.4 mapred-site.xml"></a>2.3.4 mapred-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#原文件为mapred-site.xml.template，需要先转换成xml文件</span></div><div class="line">$ mv mapred-site.xml.template mapred-site.xml</div><div class="line">$ sudo vi mapred-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">	&lt;value&gt;yarn&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-3-5-yarn-site-xml"><a href="#2-3-5-yarn-site-xml" class="headerlink" title="2.3.5 yarn-site.xml"></a>2.3.5 yarn-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ sudo vi yarn-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;</div><div class="line">	&lt;value&gt;<span class="built_in">test</span>&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">	&lt;value&gt;mapreduce_shuffle&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-3-6-将hadoop添加到环境变量"><a href="#2-3-6-将hadoop添加到环境变量" class="headerlink" title="2.3.6 将hadoop添加到环境变量"></a>2.3.6 将hadoop添加到环境变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ sudo vi /etc/profile</div><div class="line"></div><div class="line"><span class="comment">#在文件最后添加</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk1.8.0_121</div><div class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/app/hadoop-2.6.5</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/sbin</div><div class="line">	</div><div class="line"><span class="comment">#刷新配置生效</span></div><div class="line">$ <span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
+<h3 id="2-4-格式化namenode"><a href="#2-4-格式化namenode" class="headerlink" title="2.4 格式化namenode"></a>2.4 格式化namenode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hdfs namenode -format (或者hadoop namenode -format)</div></pre></td></tr></table></figure>
+<h3 id="2-5-启动hadoop"><a href="#2-5-启动hadoop" class="headerlink" title="2.5 启动hadoop"></a>2.5 启动hadoop</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ start-dfs.sh</div><div class="line">$ start-yarn.sh</div></pre></td></tr></table></figure>
+<h3 id="2-6-验证是否启动成功"><a href="#2-6-验证是否启动成功" class="headerlink" title="2.6 验证是否启动成功"></a>2.6 验证是否启动成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ jps</div><div class="line"></div><div class="line"><span class="comment">#下面六个全部有则成功</span></div><div class="line">27408 NameNode</div><div class="line">28218 Jps</div><div class="line">27643 SecondaryNameNode</div><div class="line">28066 NodeManager</div><div class="line">27803 ResourceManager</div><div class="line">27512 DataNode</div><div class="line"></div><div class="line"><span class="comment">#web管理端</span></div><div class="line">http://ubuntu:50070 （HDFS管理界面）</div><div class="line">http://ubuntu:8088 （MR管理界面）</div></pre></td></tr></table></figure>
 
       
 
@@ -235,11 +235,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hadoop</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hadoop</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
         		</li>
       		
 		</ul>
@@ -308,6 +308,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/04/05/start-dfs-sh启动出错/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          start-dfs.sh启动出错
+        
+      </div>
+    </a>
   
   
     <a href="/2017/04/04/Linux使用su切换用户提示Authentication-failure/" id="article-nav-older" class="article-nav-link-wrap">
@@ -425,11 +434,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Navicat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,11 +454,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">Navicat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,7 +466,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo-shell-Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">secureCRT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,14 +491,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">绘图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">secureCRT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
             <div class="clearfix"></div>
