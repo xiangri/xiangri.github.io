@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Navicat连接Oracle报错 | Nocturnes | xiangri</title>
+  <title>虚拟机Ubuntu下Hadoop伪分布式安装 | Nocturnes | xiangri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Navicat连接oracle报错ORA-12514: TNS:listener does not currently know of service requested in connect">
+  <meta name="description" content="VMware虚拟机Ubuntu下安装Hadoop及其配置.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Navicat连接Oracle报错">
-<meta property="og:url" content="http://yoursite.com/2017/03/28/Navicat连接Oracle报错/index.html">
+<meta property="og:title" content="虚拟机Ubuntu下Hadoop伪分布式安装">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
-<meta property="og:description" content="Navicat连接oracle报错ORA-12514: TNS:listener does not currently know of service requested in connect">
-<meta property="og:updated_time" content="2017-03-28T13:17:52.869Z">
+<meta property="og:description" content="VMware虚拟机Ubuntu下安装Hadoop及其配置.">
+<meta property="og:updated_time" content="2017-04-05T12:11:59.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Navicat连接Oracle报错">
-<meta name="twitter:description" content="Navicat连接oracle报错ORA-12514: TNS:listener does not currently know of service requested in connect">
+<meta name="twitter:title" content="虚拟机Ubuntu下Hadoop伪分布式安装">
+<meta name="twitter:description" content="VMware虚拟机Ubuntu下安装Hadoop及其配置.">
   
     <link rel="alternative" href="/atom.xml" title="Nocturnes | xiangri" type="application/atom+xml">
   
@@ -153,29 +153,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Navicat连接Oracle报错" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-虚拟机Ubuntu下Hadoop伪分布式安装" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Navicat连接Oracle报错
+      虚拟机Ubuntu下Hadoop伪分布式安装
     </h1>
   
 
         
-        <a href="/2017/03/28/Navicat连接Oracle报错/" class="archive-article-date">
-  	<time datetime="2017-03-28T12:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
+        <a href="/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/" class="archive-article-date">
+  	<time datetime="2017-04-04T10:07:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Navicat连接oracle报错<br>ORA-12514: TNS:listener does not currently know of service requested in connect</p>
+        <p>VMware虚拟机Ubuntu下安装Hadoop及其配置.</p>
 <a id="more"></a>
-<p>1、Navicat和oracle版本需要比配，可以通过instantclient来解决。<br>2、修改product\11.2.0\dbhome_1\NETWORK\ADMIN\listener.ora文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">SID_LIST_LISTENER =</div><div class="line">  (SID_LIST =</div><div class="line">    (SID_DESC =</div><div class="line">      (SID_NAME = CLRExtProc)</div><div class="line">      (ORACLE_HOME = E:\app\Administrator\product\11.2.0\dbhome_1)</div><div class="line">      (PROGRAM = extproc)</div><div class="line">      (ENVS = &quot;EXTPROC_DLLS=ONLY:E:\app\Administrator\product\11.2.0\dbhome_1\bin\oraclr11.dll&quot;)</div><div class="line">    )/*添加下面这段</div><div class="line">    (SID_DESC =</div><div class="line">    (GLOBAL_DBNAME = ORCL)</div><div class="line">    (ORACLE_HOME = E:\app\Administrator\product\11.2.0\dbhome_1)</div><div class="line">    (SID_NAME = ORCL)</div><div class="line">    )*/</div><div class="line">  )</div></pre></td></tr></table></figure></p>
+<p>使用secureCRT连接终端。</p>
+<h2 id="1、安装JDK"><a href="#1、安装JDK" class="headerlink" title="1、安装JDK."></a>1、安装JDK.</h2><h3 id="1-1-上传jdk安装包到服务器"><a href="#1-1-上传jdk安装包到服务器" class="headerlink" title="1.1 上传jdk安装包到服务器"></a>1.1 上传jdk安装包到服务器</h3><p>alt+p 出现sftp窗口，然后输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">put D:\MyProgram\JDK\jdk-8u121-linux-x64.tar.gz</div></pre></td></tr></table></figure></p>
+<h3 id="1-2-解压jdk"><a href="#1-2-解压jdk" class="headerlink" title="1.2 解压jdk"></a>1.2 解压jdk</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#创建文件夹</span></div><div class="line">mkdir app</div><div class="line"><span class="comment">#解压</span></div><div class="line">tar -zxvf jdk-8u121-linux-x64.tar.gz -C app</div></pre></td></tr></table></figure>
+<h3 id="1-3-将java添加到环境变量中"><a href="#1-3-将java添加到环境变量中" class="headerlink" title="1.3 将java添加到环境变量中"></a>1.3 将java添加到环境变量中</h3><p>切换到su然后修改。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/profile</div><div class="line"><span class="comment">#在文件最后添加</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk1.8.0_121</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</div><div class="line">	</div><div class="line"><span class="comment">#刷新配置生效</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
+<h2 id="2、安装Hadoop"><a href="#2、安装Hadoop" class="headerlink" title="2、安装Hadoop."></a>2、安装Hadoop.</h2><h3 id="2-1-上传hadoop安装包"><a href="#2-1-上传hadoop安装包" class="headerlink" title="2.1 上传hadoop安装包"></a>2.1 上传hadoop安装包</h3><p>alt+p 出现sftp窗口，然后输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">put D:\MyProgram\hadoop-2.6.5.tar.gz</div></pre></td></tr></table></figure></p>
+<h3 id="2-2-解压hadoop"><a href="#2-2-解压hadoop" class="headerlink" title="2.2 解压hadoop"></a>2.2 解压hadoop</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#创建文件夹</span></div><div class="line">mkdir app</div><div class="line"><span class="comment">#解压</span></div><div class="line">tar -zxvf hadoop-2.6.5.tar.gz -C app</div></pre></td></tr></table></figure>
+<h3 id="2-3-配置hadoop"><a href="#2-3-配置hadoop" class="headerlink" title="2.3 配置hadoop"></a>2.3 配置hadoop</h3><p>总共修改/hadoop-2.6.5/etc/hadoop/目录下五个文件</p>
+<h4 id="2-3-1-hadoop-env-sh"><a href="#2-3-1-hadoop-env-sh" class="headerlink" title="2.3.1 hadoop-env.sh"></a>2.3.1 hadoop-env.sh</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo vi hadoop-env.sh</div><div class="line"><span class="comment">#将JAVA_HOME写死</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.7.0_65</div></pre></td></tr></table></figure>
+<h4 id="2-3-2-core-site-xml"><a href="#2-3-2-core-site-xml" class="headerlink" title="2.3.2 core-site.xml"></a>2.3.2 core-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">sudo vi core-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;fs.defaultFS&lt;/name&gt;</div><div class="line">	&lt;value&gt;hdfs://<span class="built_in">test</span>:9000&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</div><div class="line">	&lt;value&gt;/home/hadoop/app/hadoop-2.6.5/tmp&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-3-3-hdfs-site-xml"><a href="#2-3-3-hdfs-site-xml" class="headerlink" title="2.3.3 hdfs-site.xml"></a>2.3.3 hdfs-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo vi hdfs-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">	&lt;value&gt;1&lt;/value&gt; <span class="comment">#节点个数</span></div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-3-4-mapred-site-xml"><a href="#2-3-4-mapred-site-xml" class="headerlink" title="2.3.4 mapred-site.xml"></a>2.3.4 mapred-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#原文件为mapred-site.xml.template，需要先转换成xml文件</span></div><div class="line">mv mapred-site.xml.template mapred-site.xml</div><div class="line">sudo vi mapred-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;mapreduce.framework.name&lt;/name&gt;</div><div class="line">	&lt;value&gt;yarn&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-3-5-yarn-site-xml"><a href="#2-3-5-yarn-site-xml" class="headerlink" title="2.3.5 yarn-site.xml"></a>2.3.5 yarn-site.xml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">sudo vi yarn-site.xml</div><div class="line"></div><div class="line"><span class="comment">#在&lt;configuration&gt;&lt;/configuration&gt;中插入</span></div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;</div><div class="line">	&lt;value&gt;<span class="built_in">test</span>&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">	&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</div><div class="line">	&lt;value&gt;mapreduce_shuffle&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-3-6-将hadoop添加到环境变量"><a href="#2-3-6-将hadoop添加到环境变量" class="headerlink" title="2.3.6 将hadoop添加到环境变量"></a>2.3.6 将hadoop添加到环境变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/profile</div><div class="line"></div><div class="line"><span class="comment">#在文件最后添加</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/hadoop/app/jdk1.8.0_121</div><div class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/app/hadoop-2.6.5</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/sbin</div><div class="line">	</div><div class="line"><span class="comment">#刷新配置生效</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
+<h3 id="2-4-格式化namenode"><a href="#2-4-格式化namenode" class="headerlink" title="2.4 格式化namenode"></a>2.4 格式化namenode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hdfs namenode -format (或者hadoop namenode -format)</div></pre></td></tr></table></figure>
+<h3 id="2-5-启动hadoop"><a href="#2-5-启动hadoop" class="headerlink" title="2.5 启动hadoop"></a>2.5 启动hadoop</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">start-dfs.sh</div><div class="line">start-yarn.sh</div></pre></td></tr></table></figure>
+<h3 id="2-6-验证是否启动成功"><a href="#2-6-验证是否启动成功" class="headerlink" title="2.6 验证是否启动成功"></a>2.6 验证是否启动成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:/home/hadoop/app/hadoop-2.6.5/sbin<span class="comment"># jps</span></div><div class="line"></div><div class="line"><span class="comment">#下面六个全部有则成功</span></div><div class="line">27408 NameNode</div><div class="line">28218 Jps</div><div class="line">27643 SecondaryNameNode</div><div class="line">28066 NodeManager</div><div class="line">27803 ResourceManager</div><div class="line">27512 DataNode</div><div class="line"></div><div class="line"><span class="comment">#web管理端</span></div><div class="line">http://ubuntu:50070 （HDFS管理界面）</div><div class="line">http://ubuntu:8088 （MR管理界面）</div></pre></td></tr></table></figure>
 
       
 
@@ -220,11 +235,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Navicat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hadoop</a>
         		</li>
       		
 		</ul>
@@ -280,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/28/Navicat连接Oracle报错/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +309,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/04/secureCRT连接虚拟机上的Ubuntu失败/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          secureCRT连接虚拟机上的Ubuntu失败
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/16/dot绘图/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">dot绘图</div>
+    <a href="/2017/04/04/Linux使用su切换用户提示Authentication-failure/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux使用su切换用户提示Authentication failure</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -319,7 +325,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Navicat连接Oracle报错" data-title="Navicat连接Oracle报错" data-url="http://yoursite.com/2017/03/28/Navicat连接Oracle报错/"></div>
+	<div class="ds-thread" data-thread-key="虚拟机Ubuntu下Hadoop伪分布式安装" data-title="虚拟机Ubuntu下Hadoop伪分布式安装" data-url="http://yoursite.com/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

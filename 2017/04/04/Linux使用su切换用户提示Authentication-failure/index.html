@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Navicat连接Oracle报错 | Nocturnes | xiangri</title>
+  <title>Linux使用su切换用户提示Authentication failure | Nocturnes | xiangri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Navicat连接oracle报错ORA-12514: TNS:listener does not currently know of service requested in connect">
+  <meta name="description" content="Linux使用su切换用户提示Authentication failure">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Navicat连接Oracle报错">
-<meta property="og:url" content="http://yoursite.com/2017/03/28/Navicat连接Oracle报错/index.html">
+<meta property="og:title" content="Linux使用su切换用户提示Authentication failure">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/Linux使用su切换用户提示Authentication-failure/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
-<meta property="og:description" content="Navicat连接oracle报错ORA-12514: TNS:listener does not currently know of service requested in connect">
-<meta property="og:updated_time" content="2017-03-28T13:17:52.869Z">
+<meta property="og:description" content="Linux使用su切换用户提示Authentication failure">
+<meta property="og:updated_time" content="2017-04-05T12:13:23.964Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Navicat连接Oracle报错">
-<meta name="twitter:description" content="Navicat连接oracle报错ORA-12514: TNS:listener does not currently know of service requested in connect">
+<meta name="twitter:title" content="Linux使用su切换用户提示Authentication failure">
+<meta name="twitter:description" content="Linux使用su切换用户提示Authentication failure">
   
     <link rel="alternative" href="/atom.xml" title="Nocturnes | xiangri" type="application/atom+xml">
   
@@ -153,29 +153,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Navicat连接Oracle报错" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux使用su切换用户提示Authentication-failure" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Navicat连接Oracle报错
+      Linux使用su切换用户提示Authentication failure
     </h1>
   
 
         
-        <a href="/2017/03/28/Navicat连接Oracle报错/" class="archive-article-date">
-  	<time datetime="2017-03-28T12:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
+        <a href="/2017/04/04/Linux使用su切换用户提示Authentication-failure/" class="archive-article-date">
+  	<time datetime="2017-04-04T09:29:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Navicat连接oracle报错<br>ORA-12514: TNS:listener does not currently know of service requested in connect</p>
+        <p>Linux使用su切换用户提示Authentication failure</p>
 <a id="more"></a>
-<p>1、Navicat和oracle版本需要比配，可以通过instantclient来解决。<br>2、修改product\11.2.0\dbhome_1\NETWORK\ADMIN\listener.ora文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">SID_LIST_LISTENER =</div><div class="line">  (SID_LIST =</div><div class="line">    (SID_DESC =</div><div class="line">      (SID_NAME = CLRExtProc)</div><div class="line">      (ORACLE_HOME = E:\app\Administrator\product\11.2.0\dbhome_1)</div><div class="line">      (PROGRAM = extproc)</div><div class="line">      (ENVS = &quot;EXTPROC_DLLS=ONLY:E:\app\Administrator\product\11.2.0\dbhome_1\bin\oraclr11.dll&quot;)</div><div class="line">    )/*添加下面这段</div><div class="line">    (SID_DESC =</div><div class="line">    (GLOBAL_DBNAME = ORCL)</div><div class="line">    (ORACLE_HOME = E:\app\Administrator\product\11.2.0\dbhome_1)</div><div class="line">    (SID_NAME = ORCL)</div><div class="line">    )*/</div><div class="line">  )</div></pre></td></tr></table></figure></p>
+<p>这个问题产生的原因是由于ubuntu系统默认是没有激活root用户的，需要我门手工进行操作，在命令行界面下，或者在终端中输入如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo passwd</div><div class="line">Password：你当前的密码</div><div class="line">Enter new UNIX password：root密码</div><div class="line">Retype new UNIX password：重复root密码</div></pre></td></tr></table></figure></p>
+<p>然后会提示成功的信息.</p>
+<p>【注】 使用su切换用户需要输入所切换到的用户的密码，而使用sudo则是当前用户的密码。</p>
 
       
 
@@ -220,11 +222,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Navicat</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -280,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/28/Navicat连接Oracle报错/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/04/Linux使用su切换用户提示Authentication-failure/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +292,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/04/secureCRT连接虚拟机上的Ubuntu失败/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          secureCRT连接虚拟机上的Ubuntu失败
+          虚拟机Ubuntu下Hadoop伪分布式安装
         
       </div>
     </a>
   
   
-    <a href="/2017/01/16/dot绘图/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">dot绘图</div>
+    <a href="/2017/04/04/secureCRT连接虚拟机上的Ubuntu失败/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">secureCRT连接虚拟机上的Ubuntu失败</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -319,7 +317,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Navicat连接Oracle报错" data-title="Navicat连接Oracle报错" data-url="http://yoursite.com/2017/03/28/Navicat连接Oracle报错/"></div>
+	<div class="ds-thread" data-thread-key="Linux使用su切换用户提示Authentication-failure" data-title="Linux使用su切换用户提示Authentication failure" data-url="http://yoursite.com/2017/04/04/Linux使用su切换用户提示Authentication-failure/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
