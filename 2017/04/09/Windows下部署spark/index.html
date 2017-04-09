@@ -6,18 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hexo shell &amp; Markdown | Nocturnes | xiangri</title>
+  <title>Windows下部署spark | Nocturnes | xiangri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些常用的Hexo命令 &amp;amp; Markdown_基本语法.">
+  <meta name="description" content="Windows下部署spark部署纯属瞎折腾，开发还是linux。
+部署环境windows10 + spark2.1 + python3.5 + Hadoop2.6 .
+暂时不支持python3.6 ！！！(坑了好久。。。)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo shell & Markdown">
-<meta property="og:url" content="http://yoursite.com/2016/11/22/hexo shell & Markdown/index.html">
+<meta property="og:title" content="Windows下部署spark">
+<meta property="og:url" content="http://yoursite.com/2017/04/09/Windows下部署spark/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
-<meta property="og:description" content="一些常用的Hexo命令 &amp;amp; Markdown_基本语法.">
-<meta property="og:updated_time" content="2016-11-22T17:00:35.791Z">
+<meta property="og:description" content="Windows下部署spark部署纯属瞎折腾，开发还是linux。
+部署环境windows10 + spark2.1 + python3.5 + Hadoop2.6 .
+暂时不支持python3.6 ！！！(坑了好久。。。)">
+<meta property="og:image" content="http://i4.buimg.com/567571/f776c67f43080027.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/709f1b16716111f4.png">
+<meta property="og:updated_time" content="2017-04-09T11:51:12.787Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo shell & Markdown">
-<meta name="twitter:description" content="一些常用的Hexo命令 &amp;amp; Markdown_基本语法.">
+<meta name="twitter:title" content="Windows下部署spark">
+<meta name="twitter:description" content="Windows下部署spark部署纯属瞎折腾，开发还是linux。
+部署环境windows10 + spark2.1 + python3.5 + Hadoop2.6 .
+暂时不支持python3.6 ！！！(坑了好久。。。)">
+<meta name="twitter:image" content="http://i4.buimg.com/567571/f776c67f43080027.png">
   
     <link rel="alternative" href="/atom.xml" title="Nocturnes | xiangri" type="application/atom+xml">
   
@@ -153,38 +162,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo shell &amp; Markdown" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Windows下部署spark" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hexo shell &amp; Markdown
+      Windows下部署spark
     </h1>
   
 
         
-        <a href="/2016/11/22/hexo shell & Markdown/" class="archive-article-date">
-  	<time datetime="2016-11-22T09:22:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
+        <a href="/2017/04/09/Windows下部署spark/" class="archive-article-date">
+  	<time datetime="2017-04-09T05:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一些常用的<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>命令 &amp; Markdown_基本语法.</p>
+        <p>Windows下部署spark部署纯属瞎折腾，开发还是linux。</p>
+<p>部署环境windows10 + spark2.1 + python3.5 + Hadoop2.6 .</p>
+<p>暂时不支持python3.6 ！！！(坑了好久。。。)</p>
 <a id="more"></a>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Delete-a-post"><a href="#Delete-a-post" class="headerlink" title="Delete a post"></a>Delete a post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ 删除/<span class="built_in">source</span>/_posts/xxx.md</div><div class="line">$ 删掉/hexo/db.json文件</div><div class="line">$ hexo clean</div><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<h3 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo server <span class="comment">#Hexo 会监视文件变动并自动更新，您无须重启服务器。</span></div><div class="line">$ hexo server <span class="_">-s</span> <span class="comment">#静态模式</span></div><div class="line">$ hexo server -p 5000 <span class="comment">#更改端口</span></div><div class="line">$ hexo server -i 192.168.1.1 <span class="comment">#自定义 IP</span></div><div class="line">$ hexo clean <span class="comment">#清除缓存 网页正常情况下可以忽略此条命令</span></div><div class="line">$ hexo generate <span class="comment">#生成静态网页</span></div><div class="line">$ hexo deploy <span class="comment">#开始部署</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a> <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ERROR Deployer not found: git</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><blockquote>
-<p><a href="http://www.jianshu.com/p/1e402922ee32/" target="_blank" rel="external">Markdown_基本语法</a></p>
-</blockquote>
+<p>先装好JDK、Python和Hadoop环境。<br>虽然Spark不依赖Hadoop但后面还是有坑…</p>
+<h4 id="安装Spark"><a href="#安装Spark" class="headerlink" title="安装Spark"></a>安装Spark</h4><p>在<a href="http://spark.apache.org/docs/latest/api/python/pyspark.html" target="_blank" rel="external">Apache Spark™</a>官网下载对应版本的spark.</p>
+<div align="center"><br><img src="http://i4.buimg.com/567571/f776c67f43080027.png" width="70%" height="50%"><br></div>
+
+<p>下载完成解压(注意路径不要有空格！！！),然后添加spark环境变量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#PATH后添加</span></div><div class="line">E:\Spark\bin</div><div class="line">E:\Spark\sbin</div><div class="line"></div><div class="line"><span class="comment">#下面这步至关重要，否则无法在python中使用spark</span></div><div class="line"><span class="comment">#然后在环境变量里新建一个系统变量PYTHONPATH</span></div><div class="line">E:\Spark\python\lib\pyspark.zip</div><div class="line">E:\Spark\python\lib\py4j<span class="number">-0.10</span><span class="number">.4</span>-src.zip</div></pre></td></tr></table></figure>
+<p>需要注意的是安装好后并不能用，，在window下还需要hadoop的winutil.exe，所以还需要下载hadoop版本对应的winutil.exe  <a href="https://github.com/steveloughran/winutils" target="_blank" rel="external">git上下载地址</a>，将下载后的文件复制到hadoop的bin目录即可。</p>
+<p>然后打开cmd 运行spark-shell看是否安装成功。</p>
+<p>如果报以下错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Error occurred during initialization of VM</div><div class="line">Could not reserve enough space <span class="keyword">for</span> object heap</div><div class="line">Error: Could not create the Java Virtual Machine.</div><div class="line">Error: A fatal exception has occurred. Program will exit.</div></pre></td></tr></table></figure></p>
+<p>则需要指明JVM的内存分配限制，在系统环境变量中添加_JAVA_OPTIONS</p>
+<div align="center"><br><img src="http://i4.buimg.com/567571/709f1b16716111f4.png" alt="JVMmemory"><br></div>
+
+<p>前者为最小尺寸，初始分配;后者为最大允许分配尺寸，按需分配，最低得512MB才能启动。</p>
 
       
 
@@ -229,7 +243,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo-shell-Markdown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hadoop</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
@@ -285,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/11/22/hexo shell & Markdown/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/09/Windows下部署spark/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,15 +321,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/11/22/ACM酱油记./" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ACM酱油记.
-        
-      </div>
-    </a>
   
+    <a href="/2017/04/07/虚拟机连不上网络/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">虚拟机连不上网络</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -319,7 +337,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hexo shell &amp; Markdown" data-title="hexo shell &amp; Markdown" data-url="http://yoursite.com/2016/11/22/hexo shell &amp; Markdown/"></div>
+	<div class="ds-thread" data-thread-key="Windows下部署spark" data-title="Windows下部署spark" data-url="http://yoursite.com/2017/04/09/Windows下部署spark/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
