@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Navicat | Nocturnes | xiangri</title>
+  <title>Ubuntu Spark 环境搭建 | Nocturnes | xiangri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="南华大学软件工程卓越工程师班在读本科生...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nocturnes | xiangri">
-<meta property="og:url" content="http://yoursite.com/tags/Navicat/index.html">
+  <meta name="description" content="Ubuntu-16.0-04-2 + spark2.1 + Anaconda3-4.1.1(python3.5.2)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu Spark 环境搭建">
+<meta property="og:url" content="http://yoursite.com/2017/04/17/Ubuntu-Spark-环境搭建/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
-<meta property="og:description" content="南华大学软件工程卓越工程师班在读本科生...">
+<meta property="og:description" content="Ubuntu-16.0-04-2 + spark2.1 + Anaconda3-4.1.1(python3.5.2)">
+<meta property="og:updated_time" content="2017-04-17T14:19:33.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nocturnes | xiangri">
-<meta name="twitter:description" content="南华大学软件工程卓越工程师班在读本科生...">
+<meta name="twitter:title" content="Ubuntu Spark 环境搭建">
+<meta name="twitter:description" content="Ubuntu-16.0-04-2 + spark2.1 + Anaconda3-4.1.1(python3.5.2)">
   
     <link rel="alternative" href="/atom.xml" title="Nocturnes | xiangri" type="application/atom+xml">
   
@@ -152,64 +153,200 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Ubuntu-Spark-环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/Navicat连接Oracle报错/" class="archive-article-date">
-  	<time datetime="2017-03-28T12:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/28/Navicat连接Oracle报错/">Navicat连接Oracle报错</a>
+    <h1 class="article-title" itemprop="name">
+      Ubuntu Spark 环境搭建
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/17/Ubuntu-Spark-环境搭建/" class="archive-article-date">
+  	<time datetime="2017-04-17T13:45:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Ubuntu-16.0-04-2 + spark2.1 + Anaconda3-4.1.1(python3.5.2)</p>
+<a id="more"></a>
+<h4 id="Anaconda安装"><a href="#Anaconda安装" class="headerlink" title="Anaconda安装"></a>Anaconda安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#安装</span></div><div class="line">$ sudo bash Anacondaxxxxx.sh</div><div class="line"></div><div class="line"><span class="comment">#之后依次会出现许可文件接收、询问是否将bin添加到环境变量，依次回车和yes即可</span></div><div class="line"></div><div class="line"><span class="comment">#.bashrc的更新生效</span></div><div class="line">$ <span class="built_in">source</span> ~/.bashrc</div><div class="line"></div><div class="line"><span class="comment">#享用... </span></div><div class="line">$ python</div></pre></td></tr></table></figure>
+<h4 id="Spark安装"><a href="#Spark安装" class="headerlink" title="Spark安装"></a>Spark安装</h4><p>基本和前一篇(<a href="https://xiangri.github.io/2017/04/09/Windows%E4%B8%8B%E9%83%A8%E7%BD%B2spark/#more" target="_blank" rel="external">Windows下部署spark</a>)中Spark安装一致,下载、解压、添加环境变量。。。</p>
+<h4 id="Python中使用pyspark"><a href="#Python中使用pyspark" class="headerlink" title="Python中使用pyspark"></a>Python中使用pyspark</h4><p>先将spark目录下的python库添加到了python的找寻目录，添加一个PYTHONPATH的环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#spark安装目录下python文件路径</span></div><div class="line"><span class="built_in">export</span> PYTHONPATH=/home/hadoop/app/spark-2.1.0-bin-hadoop2.6/python</div></pre></td></tr></table></figure>
+<p>然后在spark安装目录下/spark-2.1.0-bin-hadoop2.6/python/lib里找到py4j-0.10.4-src.zip，将其解压到/spark-2.1.0-bin-hadoop2.6/python目录下即可。</p>
+<pre><code class="bash"><span class="comment">#测试</span>
+import pyspark
+conf = pyspark.SparkConf().setAppName(<span class="string">"test"</span>).setMaster(<span class="string">"local"</span>)
+sc = pyspark.SparkContext(conf=conf)
+</code></pre>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://i2.muimg.com/567571/6692167a383f1b19.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://i1.piimg.com/567571/4187d8846c6987bc.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Navicat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Anaconda</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/17/Ubuntu-Spark-环境搭建/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/04/09/Windows下部署spark/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Windows下部署spark</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Ubuntu-Spark-环境搭建" data-title="Ubuntu Spark 环境搭建" data-url="http://yoursite.com/2017/04/17/Ubuntu-Spark-环境搭建/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -232,9 +369,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
