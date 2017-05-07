@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Nocturnes | xiangri</title>
+  <title>杀死Linux中的defunct进程 | Nocturnes | xiangri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="南华大学软件工程卓越工程师班在读本科生...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nocturnes | xiangri">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="使用pyspark的时候非正常退出操作结果出现多个sparksubmit进程并且无法结束，pyspark也无法启动，纠结了半天才知道是defunct进程（僵尸进程）的原因,杀掉sparksubmit进程后pyspark就可以启动了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="杀死Linux中的defunct进程">
+<meta property="og:url" content="http://yoursite.com/2017/05/07/杀死Linux中的defunct进程/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
-<meta property="og:description" content="南华大学软件工程卓越工程师班在读本科生...">
+<meta property="og:description" content="使用pyspark的时候非正常退出操作结果出现多个sparksubmit进程并且无法结束，pyspark也无法启动，纠结了半天才知道是defunct进程（僵尸进程）的原因,杀掉sparksubmit进程后pyspark就可以启动了。">
+<meta property="og:image" content="http://opkumgn53.bkt.clouddn.com/SparkSubmit.png">
+<meta property="og:image" content="http://opkumgn53.bkt.clouddn.com/kill.png">
+<meta property="og:image" content="http://opkumgn53.bkt.clouddn.com/fu.png">
+<meta property="og:updated_time" content="2017-05-07T10:22:02.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nocturnes | xiangri">
-<meta name="twitter:description" content="南华大学软件工程卓越工程师班在读本科生...">
+<meta name="twitter:title" content="杀死Linux中的defunct进程">
+<meta name="twitter:description" content="使用pyspark的时候非正常退出操作结果出现多个sparksubmit进程并且无法结束，pyspark也无法启动，纠结了半天才知道是defunct进程（僵尸进程）的原因,杀掉sparksubmit进程后pyspark就可以启动了。">
+<meta name="twitter:image" content="http://opkumgn53.bkt.clouddn.com/SparkSubmit.png">
   
     <link rel="alternative" href="/atom.xml" title="Nocturnes | xiangri" type="application/atom+xml">
   
@@ -152,102 +157,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-虚拟机Ubuntu下Hadoop伪分布式安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-杀死Linux中的defunct进程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/">虚拟机Ubuntu下Hadoop伪分布式安装</a>
+    <h1 class="article-title" itemprop="name">
+      杀死Linux中的defunct进程
     </h1>
   
 
         
-        <a href="/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/" class="archive-article-date">
-  	<time datetime="2017-04-04T10:07:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
+        <a href="/2017/05/07/杀死Linux中的defunct进程/" class="archive-article-date">
+  	<time datetime="2017-05-07T09:45:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>VMware虚拟机Ubuntu下安装Hadoop及其配置.</p>
-        
-          <a class="article-more-a" href="/2017/04/04/虚拟机Ubuntu下Hadoop伪分布式安装/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hadoop</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        <p>使用pyspark的时候非正常退出操作结果出现多个sparksubmit进程并且无法结束，pyspark也无法启动，纠结了半天才知道是defunct进程（僵尸进程）的原因,杀掉sparksubmit进程后pyspark就可以启动了。<br><a id="more"></a><br>如图jps里出现多个SparkSubmit进程<br><img src="http://opkumgn53.bkt.clouddn.com/SparkSubmit.png" alt="SparkSubmit"></p>
+<p>直接kill &lt;进程号&gt; 发现并没有杀死，于是使用 kill -s 9 &lt;进程号&gt;再杀,查看java进程（ps -ef|grep java）。<br><img src="http://opkumgn53.bkt.clouddn.com/kill.png" alt="kill"></p>
+<p>发现还是没有杀死，但是刚kill的进程（1961）后面状态栏出现了个<defunct>，于是查了下这个进程，原来这就是传说中<br>的僵尸进程（关于这个不加介绍了），网上找了下杀死僵尸进程的两个办法：</defunct></p>
+<ul>
+<li>重启计算机</li>
+<li>使用kill -9 &lt;父进程号&gt; ，如果此法还没有只能重启了…</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#查看java进程</span></div><div class="line"><span class="variable">$ps</span> -ef|grep java</div><div class="line"><span class="comment">#会出现UID PID PPID ...</span></div><div class="line"><span class="comment">#分别是用户ID 进程ID 父进程ID</span></div></pre></td></tr></table></figure>
+<p><img src="http://opkumgn53.bkt.clouddn.com/fu.png" alt="fu"></p>
 
       
 
       
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Linux使用su切换用户提示Authentication-failure" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/04/Linux使用su切换用户提示Authentication-failure/">Linux使用su切换用户提示Authentication failure</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/04/Linux使用su切换用户提示Authentication-failure/" class="archive-article-date">
-  	<time datetime="2017-04-04T09:29:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Linux使用su切换用户提示Authentication failure</p>
-        
-          <a class="article-more-a" href="/2017/04/04/Linux使用su切换用户提示Authentication-failure/#more">more >></a>
-        
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://i2.muimg.com/567571/6692167a383f1b19.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://i1.piimg.com/567571/4187d8846c6987bc.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -269,80 +241,72 @@
       
 
       
-      <div class="clearfix"></div>
-    </div>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
   </div>
-</article>
+</div>
 
-
-
-
-
-
-
-
-  
-    <article id="post-secureCRT连接虚拟机上的Ubuntu失败" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/04/secureCRT连接虚拟机上的Ubuntu失败/">secureCRT连接虚拟机上的Ubuntu失败</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/04/secureCRT连接虚拟机上的Ubuntu失败/" class="archive-article-date">
-  	<time datetime="2017-04-04T09:05:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>两边IP都能ping通，但是都用secureCRT连接ubuntu是出现远程系统拒绝访问。</p>
-        
-          <a class="article-more-a" href="/2017/04/04/secureCRT连接虚拟机上的Ubuntu失败/#more">more >></a>
-        
-      
-
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/07/杀死Linux中的defunct进程/" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">secureCRT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
-        		</li>
-      		
-		</ul>
-	</div>
+</div>
 
-      
-
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/17/Ubuntu-Spark-环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu Spark 环境搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -350,139 +314,28 @@
 
 
   
-    <article id="post-Navicat连接Oracle报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/28/Navicat连接Oracle报错/">Navicat连接Oracle报错</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/28/Navicat连接Oracle报错/" class="archive-article-date">
-  	<time datetime="2017-03-28T12:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Navicat连接oracle报错<br>ORA-12514: TNS:listener does not currently know of service requested in connect</p>
-        
-          <a class="article-more-a" href="/2017/03/28/Navicat连接Oracle报错/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Navicat</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="杀死Linux中的defunct进程" data-title="杀死Linux中的defunct进程" data-url="http://yoursite.com/2017/05/07/杀死Linux中的defunct进程/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
-    <article id="post-dot绘图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/16/dot绘图/">dot绘图</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/16/dot绘图/" class="archive-article-date">
-  	<time datetime="2017-01-16T08:03:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在用python实现决策树算法的时候发现可以利用dot和graphviz来可视化生成的决策树如下图，于是了解了下dot。</p>
-        
-          <a class="article-more-a" href="/2017/01/16/dot绘图/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">绘图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
 
 
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -504,8 +357,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
