@@ -6,17 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/4 | Nocturnes | xiangri</title>
+  <title>编译mongo-spark出现的问题 | Nocturnes | xiangri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="南华大学软件工程卓越工程师班在读本科生...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nocturnes | xiangri">
-<meta property="og:url" content="http://yoursite.com/archives/2017/04/page/2/index.html">
+  <meta name="description" content="在Spark连接MongoDb官方连接器时到build the mongo-spark driver时出现以下错误：
+
+Waiting for lock on /home/hadoop/.sbt/boot/sbt.boot.lock to be available…
+Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be availab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译mongo-spark出现的问题">
+<meta property="og:url" content="http://yoursite.com/2017/05/11/编译mongo-spark出现的问题/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
-<meta property="og:description" content="南华大学软件工程卓越工程师班在读本科生...">
+<meta property="og:description" content="在Spark连接MongoDb官方连接器时到build the mongo-spark driver时出现以下错误：
+
+Waiting for lock on /home/hadoop/.sbt/boot/sbt.boot.lock to be available…
+Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be availab">
+<meta property="og:updated_time" content="2017-05-11T16:04:11.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nocturnes | xiangri">
-<meta name="twitter:description" content="南华大学软件工程卓越工程师班在读本科生...">
+<meta name="twitter:title" content="编译mongo-spark出现的问题">
+<meta name="twitter:description" content="在Spark连接MongoDb官方连接器时到build the mongo-spark driver时出现以下错误：
+
+Waiting for lock on /home/hadoop/.sbt/boot/sbt.boot.lock to be available…
+Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be availab">
   
     <link rel="alternative" href="/atom.xml" title="Nocturnes | xiangri" type="application/atom+xml">
   
@@ -152,110 +162,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-编译mongo-spark出现的问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/04/Linux使用su切换用户提示Authentication-failure/" class="archive-article-date">
-  	<time datetime="2017-04-04T09:29:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/04/Linux使用su切换用户提示Authentication-failure/">Linux使用su切换用户提示Authentication failure</a>
+    <h1 class="article-title" itemprop="name">
+      编译mongo-spark出现的问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/11/编译mongo-spark出现的问题/" class="archive-article-date">
+  	<time datetime="2017-05-10T16:01:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Spark连接MongoDb<a href="https://github.com/mongodb/mongo-spark" target="_blank" rel="external">官方连接器</a>时<br>到build the mongo-spark driver时出现以下错误：</p>
+<ul>
+<li>Waiting for lock on /home/hadoop/.sbt/boot/sbt.boot.lock to be available…</li>
+<li>Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…</li>
+</ul>
+<a id="more"></a>
+<p>这是同时开启了多个终端进行SBT的编译，才导致进行锁的机制，能做的就是进入到相应的目录，将这几个文件进行删除，才能正常进入。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#定位到上述错误里的文件位置，然后删除</span></div><div class="line">hadoop@ubuntu:~/.ivy2$ rm -rf .sbt.ivy.lock </div><div class="line">hadoop@ubuntu:~/.sbt/boot$ rm -rf sbt.boot.lock </div><div class="line"><span class="comment">#完成就可以编译了</span></div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://i2.muimg.com/567571/6692167a383f1b19.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://i1.piimg.com/567571/4187d8846c6987bc.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/11/编译mongo-spark出现的问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/04/secureCRT连接虚拟机上的Ubuntu失败/" class="archive-article-date">
-  	<time datetime="2017-04-04T09:05:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/04/secureCRT连接虚拟机上的Ubuntu失败/">secureCRT连接虚拟机上的Ubuntu失败</a>
-    </h1>
+    <a href="/2017/05/11/Spark连接MongoDB-Python版本/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Spark连接MongoDB--Python版本
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/08/虚拟机apt-get-update更新出错/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">虚拟机下apt-get update更新出错</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">secureCRT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/04/">&laquo; Prev</a><a class="page-number" href="/archives/2017/04/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -278,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
