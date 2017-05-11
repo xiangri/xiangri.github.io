@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>编译mongo-spark出现的问题 | Nocturnes | xiangri</title>
+  <title>����mongo-spark���ֵ����� | Nocturnes | xiangri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在 build the mongo-spark driver时出现以下错误：
+  <meta name="description" content="�� build the mongo-spark driverʱ�������´�����
 
 Waiting for lock on /home/hadoop/.sbt/boot/sbt.boot.lock to be available…
 Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译mongo-spark出现的问题">
+<meta property="og:title" content="����mongo-spark���ֵ�����">
 <meta property="og:url" content="http://yoursite.com/2017/05/08/编译mongo-spark出现的问题/index.html">
 <meta property="og:site_name" content="Nocturnes | xiangri">
-<meta property="og:description" content="在 build the mongo-spark driver时出现以下错误：
+<meta property="og:description" content="�� build the mongo-spark driverʱ�������´�����
 
 Waiting for lock on /home/hadoop/.sbt/boot/sbt.boot.lock to be available…
 Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
-<meta property="og:updated_time" content="2017-05-08T16:06:50.062Z">
+<meta property="og:updated_time" content="2017-05-09T01:19:53.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编译mongo-spark出现的问题">
-<meta name="twitter:description" content="在 build the mongo-spark driver时出现以下错误：
+<meta name="twitter:title" content="����mongo-spark���ֵ�����">
+<meta name="twitter:description" content="�� build the mongo-spark driverʱ�������´�����
 
 Waiting for lock on /home/hadoop/.sbt/boot/sbt.boot.lock to be available…
 Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
@@ -169,7 +169,7 @@ Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
         
   
     <h1 class="article-title" itemprop="name">
-      编译mongo-spark出现的问题
+      ����mongo-spark���ֵ�����
     </h1>
   
 
@@ -182,14 +182,15 @@ Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在 build the mongo-spark driver时出现以下错误：</p>
+        <p>�� build the mongo-spark driverʱ�������´�����</p>
 <ul>
 <li>Waiting for lock on /home/hadoop/.sbt/boot/sbt.boot.lock to be available…</li>
 <li>Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…</li>
 </ul>
 <a id="more"></a>
-<p>这是同时开启了多个终端进行SBT的编译，才导致进行锁的机制，能做的就是进入到相应的目录，将这几个文件进行删除，才能正常进入。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#定位到上述错误里的文件位置，然后删除</span></div><div class="line">hadoop@ubuntu:~/.ivy2$ rm -rf .sbt.ivy.lock </div><div class="line">hadoop@ubuntu:~/.sbt/boot$ rm -rf sbt.boot.lock </div><div class="line"><span class="comment">#完成就可以编译了</span></div></pre></td></tr></table></figure>
+<p>����ͬʱ�����˶����ն˽���SBT�ı��룬�ŵ��½������Ļ��ƣ������ľ��ǽ��뵽��Ӧ��Ŀ¼�����⼸���ļ�����ɾ���������������롣</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#��λ���������������ļ�λ�ã�Ȼ��ɾ��</span></div><div class="line">hadoop@ubuntu:~/.ivy2$ rm -rf .sbt.ivy.lock </div><div class="line">hadoop@ubuntu:~/.sbt/boot$ rm -rf sbt.boot.lock </div><div class="line"><span class="comment">#���ɾͿ��Ա�����</span></div></pre></td></tr></table></figure>
+
       
 
       
@@ -307,6 +308,15 @@ Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
   
 <nav id="article-nav">
   
+    <a href="/2017/05/11/Spark连接MongoDB-Python版本/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Spark连接MongoDB--Python版本
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/05/08/虚拟机apt-get-update更新出错/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">虚拟机下apt-get update更新出错</div>
@@ -405,15 +415,19 @@ Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Navicat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -425,23 +439,19 @@ Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Error</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spark</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Anaconda</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Navicat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,14 +463,6 @@ Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">dot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绘图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">secureCRT</a>
               </li>
              
@@ -469,15 +471,23 @@ Waiting for lock on /home/hadoop/.ivy2/.sbt.ivy.lock to be available…">
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Error</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color4">dot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color3">绘图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
             <div class="clearfix"></div>
